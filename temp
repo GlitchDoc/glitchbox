@@ -1,0 +1,4 @@
+#!/bin/bash
+
+echo "Temperature and humidity near device:"
+sudo /home/pi/Programs/Adafruit_Python_DHT/examples/AdafruitDHT.py 2302 17
