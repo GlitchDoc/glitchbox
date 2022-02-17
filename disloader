@@ -6,17 +6,15 @@
 numcheck='^[0-9]+([.][0-9]+)*$'
 echo Dysphoric Glitchbox Loader awaiting instructions…
 echo Pick a number:
-echo 1. Customize the Login Screen - 2. GPS - 3. TEMP - 4. WifiTransmitter - 5. WifiJammer
+echo 1. WifiJammer - 2. GPS - 3. TEMP - 4. WifiTransmitter
 
 read input
 
 if [ "$input" = 1 ]; then 
 
-# Install Custom Login Screen
+# Install Wifi Jammer
 cd ~/Programs
-sudo cp -rf motd.sh /etc/profile.d/motd.sh
-exit 1
-elif [ "$input" = 2 ]; then
+git clone https://github.com/DanMcInerney/wifijammer
 
 # Install GPS Software
 sudo apt-get -y install gpsd-clients python-gps
@@ -47,13 +45,8 @@ sudo apt-get install libav-tools oggfwd libsndfile1-dev
 sudo apt-get install make build-essential
 
 elif [ "$input" = 5 ]; then
+echo "No 5!"
 
-# Install Wifi Jammer
-cd ~/Programs
-git clone https://github.com/DanMcInerney/wifijammer
-
-elif [ "$input" = 6 ]; then
-echo "Test"
 
 else
 echo You messed up.
