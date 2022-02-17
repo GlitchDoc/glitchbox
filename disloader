@@ -10,7 +10,7 @@ echo 1. Customize the Login Screen - 2. GPS - 3. TEMP - 4. WifiTransmitter - 5. 
 
 read input
 
-if [ “$input” = 1 ]; then 
+if [ "$input" = 1 ]; then 
 
 # Install Custom Login Screen
 cd ~/Programs
