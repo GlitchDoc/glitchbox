@@ -15,7 +15,7 @@ if [ “$input” = 1 ]; then
 # Install Custom Login Screen
 cd ~/Programs
 sudo cp -rf motd.sh /etc/profile.d/motd.sh
-
+exit 1
 elif [ "$input" = 2 ]; then
 
 # Install GPS Software
