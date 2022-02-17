@@ -39,12 +39,12 @@ elif [ "$input" = 3 ]; then
 elif [ "$input" = 4 ]; then
 #=======================================================
 # Install FM_Transmitter Software
-#cd ~/Programs
-#sudo git clone https://github.com/markondej/fm_transmitter.git
-#sudo apt-get install espeak
-#sudo apt-get install sox libsox-fmt-mp3
-#sudo apt-get install libav-tools oggfwd libsndfile1-dev
-#sudo apt-get install make build-essential
+cd ~/Programs
+sudo git clone https://github.com/markondej/fm_transmitter.git
+sudo apt-get install espeak
+sudo apt-get install sox libsox-fmt-mp3
+sudo apt-get install libav-tools oggfwd libsndfile1-dev
+sudo apt-get install make build-essential
 #=========================================================
 elif [ "$input" = 5 ]; then
 #=========================================================
