@@ -12,7 +12,7 @@ if [ “$input” = 1 ]; then
 #=======================================================
 # Install Custom Login Screen
 cd ~/Programs
-cp motd.sh /etc/profile.d/motd.sh
+cp -rf motd.sh /etc/profile.d/motd.sh
 exit
 #=======================================================
 elif [ "$input" = 2 ]; then
