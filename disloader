@@ -44,10 +44,13 @@ sudo apt-get install espeak
 sudo apt-get install sox libsox-fmt-mp3
 sudo apt-get install libav-tools oggfwd libsndfile1-dev
 sudo apt-get install make build-essential
+cd fm_transmitter
+sudo make
 
 elif [ "$input" = 5 ]; then
-echo "No 5!"
-
+# Install Katoolin - Penetration Testing Software Loader
+cd ~/Programs
+git clone https://github.com/LionSec/katoolin.git
 
 else
 echo You messed up.
