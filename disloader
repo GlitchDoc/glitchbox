@@ -1,0 +1,27 @@
+# Dysphoric's Script Loader for Project Glitchbox
+# Date: February 16, 2022
+
+#!/bin/bash
+
+
+#=======================================================
+# Install FM_Transmitter Software
+#cd ~/Programs
+#sudo git clone https://github.com/markondej/fm_transmitter.git
+#sudo apt-get install espeak
+#sudo apt-get install sox libsox-fmt-mp3
+#sudo apt-get install libav-tools oggfwd libsndfile1-dev
+#sudo apt-get install make build-essential
+
+#========================================================
+# Install DHT Sensor Software #Python3-Version-Enabled
+#cd ~/Programs
+#sudo apt-get install pip
+#sudo apt-get install adafruit-circuitpython-dht
+#sudo apt-get install libgpiod2
+#sudo apt-get install python-pip
+#sudo python -m pip install --upgrade pip setuptools wheel
+#sudo pip install Adafruit-DHT
+#sudo git clone https://github.com/adafruit/Adafruit_Python_DHT.git
+#cd Adafruit_Python_DHT
+#sudo python setup.py install
