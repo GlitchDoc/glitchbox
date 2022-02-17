@@ -52,6 +52,9 @@ elif [ "$input" = 5 ]; then
 cd ~/Programs
 git clone https://github.com/DanMcInerney/wifijammer
 
+elif [ "$input" = 6 ]; then
+echo "Test"
+
 else
 echo You messed up.
 fi
