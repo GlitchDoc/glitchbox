@@ -3,16 +3,32 @@
 
 #!/bin/bash
 
+numcheck='^[0-9]+([.][0-9]+)*$'
+echo Dysphoric Glitchbox Loader awaiting instructions…
+echo Select Program to Install:
+read x
 
+if ! [[ $x =~ $numcheck ]]; then
+echo INPUT ERROR! You must use a valid frequency.
+exit 1
+fi
+echo Pick a number:
+echo 1. Customize the Login Screen - 2. GPS - 3. TEMP - 4. WifiTransmitter - 5. WifiJammer
+
+read input
+if [ “$input” = 1 ]; then 
 #=======================================================
-# Install FM_Transmitter Software
-#cd ~/Programs
-#sudo git clone https://github.com/markondej/fm_transmitter.git
-#sudo apt-get install espeak
-#sudo apt-get install sox libsox-fmt-mp3
-#sudo apt-get install libav-tools oggfwd libsndfile1-dev
-#sudo apt-get install make build-essential
-
+# Install Custom Login Screen
+cd ~/Programs
+cp motd.sh /etc/profile.d/motd.sh
+#=======================================================
+elif [ "$input" = 2 ]; then
+#=======================================================
+# Install GPS Software
+sudo apt-get -y install gpsd-clients python-gps
+sudo pip3 install adafruit-circuitpython-gps
+#=======================================================
+elif [ "$input" = 3 ]; then
 #========================================================
 # Install DHT Sensor Software #Python3-Version-Enabled
 #cd ~/Programs
@@ -25,8 +41,24 @@
 #sudo git clone https://github.com/adafruit/Adafruit_Python_DHT.git
 #cd Adafruit_Python_DHT
 #sudo python setup.py install
-
+#=======================================================
+elif [ "$input" = 4 ]; then
+#=======================================================
+# Install FM_Transmitter Software
+#cd ~/Programs
+#sudo git clone https://github.com/markondej/fm_transmitter.git
+#sudo apt-get install espeak
+#sudo apt-get install sox libsox-fmt-mp3
+#sudo apt-get install libav-tools oggfwd libsndfile1-dev
+#sudo apt-get install make build-essential
+#=========================================================
+elif [ "$input" = 5 ]; then
 #=========================================================
 # Install Wifi Jammer
 cd ~/Programs
 git clone https://github.com/DanMcInerney/wifijammer
+
+else
+echo You messed up.
+fi
+exit
