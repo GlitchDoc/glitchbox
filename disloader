@@ -13,12 +13,14 @@ if [ “$input” = 1 ]; then
 # Install Custom Login Screen
 cd ~/Programs
 cp motd.sh /etc/profile.d/motd.sh
+exit
 #=======================================================
 elif [ "$input" = 2 ]; then
 #=======================================================
 # Install GPS Software
 sudo apt-get -y install gpsd-clients python-gps
 sudo pip3 install adafruit-circuitpython-gps
+exit
 #=======================================================
 elif [ "$input" = 3 ]; then
 #========================================================
@@ -33,6 +35,7 @@ elif [ "$input" = 3 ]; then
 #sudo git clone https://github.com/adafruit/Adafruit_Python_DHT.git
 #cd Adafruit_Python_DHT
 #sudo python setup.py install
+exit
 #=======================================================
 elif [ "$input" = 4 ]; then
 #=======================================================
@@ -43,12 +46,14 @@ elif [ "$input" = 4 ]; then
 #sudo apt-get install sox libsox-fmt-mp3
 #sudo apt-get install libav-tools oggfwd libsndfile1-dev
 #sudo apt-get install make build-essential
+exit
 #=========================================================
 elif [ "$input" = 5 ]; then
 #=========================================================
 # Install Wifi Jammer
 cd ~/Programs
 git clone https://github.com/DanMcInerney/wifijammer
+exit
 
 else
 echo You messed up.
