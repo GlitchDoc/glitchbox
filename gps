@@ -1,0 +1,10 @@
+#!/bin/bash
+GPSTM=$(gpspipe -w -n 5 | grep -m 1 TPV | cut -d, -f4 | cut -d: -f2,3,4)
+x=$(gpspipe -w -n 5 |grep lon|tail -n1|cut -d":" -f9|cut -d"," -f1)
+y=$(gpspipe -w -n 5 |grep lon|tail -n1|cut -d":" -f10|cut -d"," -f1)
+GPSALT=$(gpspipe -w -n 5 |grep alt|tail -n1|cut -d":" -f11|cut -d"," -f1)
+GPSDATE=${GPSTM:1:-15}
+GPSTIME=${GPSTM:12:-6}
+echo "Date/Time: $GPSDATE $GPSTIME"
+echo "Latitude: $x, Longitude: $y"
+echo "Altitude: $GPSALT"

@@ -1,0 +1,28 @@
+#!/bin/bash
+
+numcheck='^[0-9]+([.][0-9]+)*$'
+echo Dysphoric Radio awaiting instructions…
+echo Select Frequency:
+read freq
+if ! [[ $freq =~ $numcheck ]]; then
+echo INPUT ERROR! You must use a valid frequency.
+exit 1
+fi
+echo Pick a number:
+echo 1.Microphone - 2.mp3 - 3.wav - 4.espeak
+read input
+if [ “$input” = 1 ]; then 
+arecord -D plughw:1,0 -c1 -r 22050 -d 0 -f s16_LE | sudo /home/pi/programs/fm_transmitter/fm_transmitter -f $freq -
+elif [ "$input" = 2 ]; then
+sudo ffmpeg -i /home/pi/sounds/majortom.mp3 -f s16le -ar 22.05k -ac 1 - | sudo /home/pi/programs/fm_transmitter/fm_transmitter -f $freq -
+elif [ "$input" = 3 ]; then
+sudo /home/pi/programs/fm_transmitter-master/fm_transmitter -f $freq /home/pi/sounds/star_wars.wav
+elif [ "$input" = 4 ]; then
+echo Text-to-Speech input:
+read espeech
+espeak -vde "$espeech" --stdout> /tmp/tmp.wav && sudo /home/pi/Programs/fm_transmitter/fm_transmitter -f $freq /tmp/tmp.wav
+# old not working espeak "$espeech" --stdout | ffmpeg -i - -ar 44100 -ac 2 -ab 192k -f wav - | sudo /home/pi/Programs/fm_transmitter/fm_transmitter -f $freq -
+else
+echo You messed up.
+fi
+exit
