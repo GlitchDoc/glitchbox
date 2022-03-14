@@ -20,21 +20,31 @@ git clone https://github.com/DanMcInerney/wifijammer
 if [ "$input" = 2 ]; then
 
 # Install GPS Software
+echo "Installing gpsd"
 sudo apt-get -y install gpsd-clients
+echo "Installing adafruit-gps"
 sudo pip3 install adafruit-circuitpython-gps
 
 elif [ "$input" = 3 ]; then
 
 # Install DHT Sensor Software #Python3-Version-Enabled
+echo "Moving to Programs"
 cd ~/Programs
+echo "Installing pip"
 sudo apt-get install pip
+echo "Installing adafruit-dht"
 sudo apt-get install adafruit-circuitpython-dht
+sudo "Installing gpio library"
 sudo apt-get install libgpiod2
+echo "Installing Python-pip"
 sudo apt-get install python-pip
+echo "installing wheels"
 sudo python -m pip install --upgrade pip setuptools wheel
+echo "Installing Adafruit-DHT"
 sudo pip install Adafruit-DHT
 sudo git clone https://github.com/adafruit/Adafruit_Python_DHT.git
 cd Adafruit_Python_DHT
+echo "Installing Adafruit DHT files"
 sudo python setup.py install
 
 elif [ "$input" = 4 ]; then
