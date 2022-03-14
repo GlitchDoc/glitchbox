@@ -1,10 +1,10 @@
-# Dysphoric's Script Loader for Project Glitchbox
+# Installation Script for Project Glitchbox
 # Date: February 16, 2022
 
 #!/bin/bash
 
 numcheck='^[0-9]+([.][0-9]+)*$'
-echo Dysphoric Glitchbox Loader awaiting instructions…
+echo Glitchbox Installer awaiting instructions…
 echo Pick a number:
 echo 1. WifiJammer - 2. GPS - 3. TEMP - 4. WifiTransmitter - 5. Katoolin
 
