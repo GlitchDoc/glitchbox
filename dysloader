@@ -17,8 +17,10 @@ cd ~/Programs
 sudo apt-get install python3-pip
 git clone https://github.com/DanMcInerney/wifijammer
 
+if [ "$input" = 2 ]; then
+
 # Install GPS Software
-sudo apt-get -y install gpsd-clients python-gps
+sudo apt-get -y install gpsd-clients
 sudo pip3 install adafruit-circuitpython-gps
 
 elif [ "$input" = 3 ]; then
